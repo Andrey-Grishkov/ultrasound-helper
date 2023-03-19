@@ -1,0 +1,29 @@
+@import "../root";
+
+.header {
+  width: 100%;
+  height: 140px;
+  background-color: rgba(35, 114, 171, 1);
+  color: white;
+  @include flex(row, space-between, center);
+
+  &__container {
+    border: yellow 1px solid;
+    @include flex(row, flex-start, center);
+  }
+
+  &__text-container {
+    margin-left: 16px;
+  }
+
+  &__title {
+    margin: 0;
+    @include font(36px, 44px, 600);
+  }
+
+  &__text {
+    margin: 8px 0 0 0;
+    @include font(20px, 24px, 400);
+  }
+
+}

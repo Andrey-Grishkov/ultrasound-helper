@@ -1,9 +1,10 @@
-import logo from '../../logo.svg';
-import './App.css';
+import './App.scss';
+import Header from "../Header/Header";
 
 function App() {
   return (
-    <div className="App">
+    <div className="page">
+      <Header/>
       Привет
     </div>
   );

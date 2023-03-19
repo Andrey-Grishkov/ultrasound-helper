@@ -1,0 +1,16 @@
+@import "../root";
+
+.header-nav {
+  margin-right: 80px;
+  @include flex(row, flex-start, center);
+
+  &__links {
+    list-style-type: none;
+    @include flex(row, flex-start, center);
+    gap: 24px;
+  }
+
+  &__link {
+    cursor: pointer;
+  }
+}
