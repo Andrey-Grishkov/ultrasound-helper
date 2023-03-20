@@ -4,7 +4,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <a className="footer__link">Сообщить об ошибке</a>
+      <a className="footer__link" href="mailto:dvoitsavglazax@mail.ru">Сообщить об ошибке</a>
     </footer>
   );
 };

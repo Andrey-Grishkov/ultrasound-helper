@@ -2,6 +2,7 @@
 
 .calculator {
   width: 100%;
+  //height: 78vh;
   //height: 80%;
 
   &__content {
@@ -28,6 +29,7 @@
 
   &__manual-container {
     margin: 0;
+    height: 100%;
     @include flex(column, center, flex-start);
     border: 1px solid rgba(187, 187, 187, 1);
     color: rgba(14, 15, 15, 1);

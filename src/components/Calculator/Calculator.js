@@ -1,5 +1,6 @@
 import "./Calculator.scss";
 import CalcForm from "../CalcForm/CalcForm";
+import Manual from "../Manual/Manual";
 
 const Calculator = () => {
 
@@ -13,9 +14,7 @@ const Calculator = () => {
           <h3 className="calculator__title">Инструкция</h3>
         </div>
         <CalcForm />
-        <div></div>
-
-
+        <Manual/>
       </div>
     </section>
   );

@@ -2,7 +2,8 @@
 
 .footer {
   width: 100%;
-  height: 60px;
+  //height: 60px;
+  height: 7vh;
   background-color: rgba(35, 114, 171, 1);
   color: white;
   @include flex(row, flex-end, center);
@@ -10,5 +11,13 @@
   &__link {
     margin-right: 80px;
     cursor: pointer;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      transition: 1s ease-in;
+      opacity: .6;
+      border-bottom: white 1px solid;
+    }
   }
 }

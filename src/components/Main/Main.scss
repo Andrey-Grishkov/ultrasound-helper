@@ -2,7 +2,7 @@
 
 .main {
   width: 100%;
-  height: 1089px;
+  height: 78vh;
 
   &__title {
     margin: 44px 0 0 5vw;
@@ -25,9 +25,20 @@
     width: 29vw;
     height: 136px;
     @include flex(row, flex-start, center);
-    background-color: rgba(233, 242, 249, 1);
+    background-color: rgb(223, 227, 236);
     border-radius: 12px;
-    cursor: pointer;
+    cursor: default;
+    text-decoration: none;
+    color: black;
+
+    &_active {
+      cursor: pointer;
+      background-color: rgb(205, 217, 253);
+
+      &:hover {
+        border: rgba(35, 114, 171, 1) 5px solid;
+      }
+    }
   }
 
   &__image {

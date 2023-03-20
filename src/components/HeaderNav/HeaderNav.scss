@@ -12,5 +12,13 @@
 
   &__link {
     cursor: pointer;
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      transition: 1s ease-in;
+      opacity: .6;
+      border-bottom: white 1px solid;
+    }
   }
 }
