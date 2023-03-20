@@ -1,0 +1,67 @@
+@import "../root";
+
+.form {
+  margin: 28px 24px;
+  border: red 1px solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 80px);
+  gap: 1.50vw;
+
+  &__input-cell {
+    border: chartreuse 1px solid;
+    display: grid;
+    grid-template-columns: 10.81vw 2.94vw;
+  }
+
+  &__input-description {
+    margin: 0 0 8px 0;
+    @include font(20px, 24px, 400);
+    grid-column: span 2;
+  }
+
+  &__input {
+    width: 10.81vw;
+    height: 48px;
+    padding: 0;
+    border: #BBBBBB 1px solid;
+  }
+
+  &__input-measuring {
+    background-color: #E2E2E2;
+    width: 2.94vw;
+    height: 48px;
+    border: #BBBBBB 1px solid;
+    @include flex(column, center, center);
+  }
+
+  &__result {
+    grid-column: span 2;
+    background: rgba(233, 242, 249, 1);
+    border: none;
+    @include flex(row, flex-start, center);
+    @include font(28px, 34px, 600);
+    padding-left: 32px;
+
+    span {
+      padding-left: 32px;
+      color: rgba(35, 114, 171, 1);
+    }
+  }
+
+  &__btn {
+    color: white;
+    background: rgba(35, 114, 171, 1);
+    border-radius: 4px;
+    @include flex(row, center, center);
+    @include font(20px, 24px, 600);
+    border: none;
+    cursor: pointer;
+
+    &_disabled {
+      background: rgba(187, 187, 187, 1);
+      cursor: default;
+    }
+  }
+
+}

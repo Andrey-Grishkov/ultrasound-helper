@@ -2,11 +2,11 @@
 
 .calculator {
   width: 100%;
-  height: 80%;
+  //height: 80%;
 
   &__content {
-    margin: 44px 80px 36px 80px;
-    height: 90%;
+    margin: 44px 5vw 55px 5vw;
+    //height: 90%;
     border: blue 1px solid;
     display: grid;
     grid-template-columns: 51.88vw auto;

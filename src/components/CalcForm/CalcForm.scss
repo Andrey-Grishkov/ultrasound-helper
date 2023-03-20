@@ -1,0 +1,39 @@
+@import "../root";
+
+.calc-form {
+  @include flex(column, flex-start, flex-start);
+
+  &__photo-container {
+    @include flex(row, space-between, center);
+    border: 1px solid rgba(187, 187, 187, 1);
+  }
+
+  &__image {
+    margin: 28px 24px;
+    width: 27.63vw;
+    object-fit: contain;
+}
+  &__text {
+    @include font(20px, 24px, 400);
+  }
+
+  &__form-container {
+    display: grid;
+    grid-template-columns: 31.31vw auto;
+    height: 445px;
+    width: 51.88vw;
+    border: 1px solid rgba(187, 187, 187, 1);
+    border-top: none;
+  }
+
+  &__description-title {
+    margin: 36px 0 0 0;
+    @include font(24px, 29px, 600);
+  }
+
+  &__description {
+    margin: 20px 0 0 0;
+    @include font(16px, 19px, 400);
+  }
+
+}
