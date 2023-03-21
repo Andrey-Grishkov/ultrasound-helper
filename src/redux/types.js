@@ -1,5 +1,1 @@
-export const SET_GROWN = 'VALUE/SET_GROWN'
-export const SET_WEIGHT = 'VALUE/SET_WEIGHT'
-export const SET_L = 'VALUE/SET_L'
-export const SET_SEP = 'VALUE/SET_SEP'
 export const SET_RESULT = 'RESULT/SET_RESULT'

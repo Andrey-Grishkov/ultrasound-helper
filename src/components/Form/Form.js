@@ -1,10 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {connect} from 'react-redux'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {calcRes} from '../../redux/actions'
-import {setGrown} from '../../redux/actions'
-import {setWeight} from '../../redux/actions'
-
 import "./Form.scss";
 
 const Form = ({resultat}) => {
@@ -130,7 +127,7 @@ const Form = ({resultat}) => {
 }
 
 const mapDispatchToProps = {
-  calcRes, setGrown, setWeight
+  calcRes
 }
 
 const mapStateToProps = state => {
