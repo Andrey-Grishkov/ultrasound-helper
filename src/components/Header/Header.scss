@@ -8,7 +8,6 @@
   @include flex(row, space-between, center);
 
   &__container {
-    border: yellow 1px solid;
     @include flex(row, flex-start, center);
   }
 

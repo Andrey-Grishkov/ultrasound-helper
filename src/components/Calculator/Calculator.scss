@@ -8,7 +8,6 @@
   &__content {
     margin: 44px 5vw 55px 5vw;
     //height: 90%;
-    border: blue 1px solid;
     display: grid;
     grid-template-columns: 51.88vw auto;
     grid-template-rows: 106px auto;
@@ -33,9 +32,7 @@
     @include flex(column, center, flex-start);
     border: 1px solid rgba(187, 187, 187, 1);
     color: rgba(14, 15, 15, 1);
-
   }
-
 }
 
 

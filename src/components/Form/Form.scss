@@ -2,14 +2,12 @@
 
 .form {
   margin: 28px 24px;
-  border: red 1px solid;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(4, 80px);
   gap: 1.50vw;
 
   &__input-cell {
-    border: chartreuse 1px solid;
     display: grid;
     grid-template-columns: 10.81vw 2.94vw;
   }
@@ -39,7 +37,6 @@
     grid-column: span 2;
     background: rgba(233, 242, 249, 1);
     border: none;
-    //@include flex(column, center, center);
     @include font(28px, 34px, 600);
     padding-left: 32px;
     display: grid;
