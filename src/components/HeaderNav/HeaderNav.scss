@@ -14,6 +14,7 @@
     cursor: pointer;
     text-decoration: none;
     color: white;
+    @include font(22px, 24px, 400);
 
     &:hover {
       transition: 1s ease-in;
