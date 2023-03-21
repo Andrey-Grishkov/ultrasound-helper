@@ -16,20 +16,20 @@ export const appReducer = (state = initialState, action) => {
       if(DIP==0){
         return {result: `0 мл`};
       } else if (DIP<200){
-        return {result: `${resultat = Math.trunc(DIP*9.01)} мл 
+        return {result: `${resultat = Math.trunc(DIP*9.01)} мл+ 
         (${resultatMin = Math.trunc(DIP*(9.01-0.34))} - 
-        ${resultatMax = Math.trunc(DIP*(9.01+0.34))})
+        ${resultatMax = Math.trunc(DIP*(9.01+0.34))} мл)
         `};
       } else if (DIP<500) {
-        return {result: `${resultat = Math.trunc(DIP*8.17)} мл 
+        return {result: `${resultat = Math.trunc(DIP*8.17)} мл+ 
         (${resultatMin = Math.trunc(DIP*(8.17-0.17))} - 
-        ${resultatMax = Math.trunc(DIP*(8.17+0.17))})
+        ${resultatMax = Math.trunc(DIP*(8.17+0.17))} мл)
         `};
       }
       else {
-        return {result: `${resultat = Math.trunc(DIP*7.77)} мл 
+        return {result: `${resultat = Math.trunc(DIP*7.77)} мл+ 
         (${resultatMin = Math.trunc(DIP*(7.77-0.46))} - 
-        ${resultatMax = Math.trunc(DIP*(7.77+0.46))})
+        ${resultatMax = Math.trunc(DIP*(7.77+0.46))} мл)
         `};
       }
     }

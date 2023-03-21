@@ -109,7 +109,12 @@ const Form = ({resultat}) => {
         />
         <div className="form__input-measuring">мм</div>
       </div>
-      <div className="form__result">Результат <span>{resultat.result}</span></div>
+      <div className="form__result">
+        <p>Результат
+        </p>
+        <span className={`result-part1 ${resultat.result !== '0 мл' ? '' : 'result-part1_bigger'}` }>{resultat.result.split("+")[0]}</span>
+        {resultat.result !== '0 мл' && <span id="result-part2">{resultat.result.split("+")[1]}</span>}
+      </div>
       <button
         className={`form__btn ${isBlockedSubmit ? 'form__btn_disabled' : ""}`}
         type="submit"
