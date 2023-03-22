@@ -95,7 +95,7 @@ const Form = ({resultat}) => {
           disabled={isBlockedInput}
           onChange={changeInputHandler}
         />
-        <div className="form__input-measuring">мм</div>
+        <div className="form__input-measuring">cм</div>
       </div>
       <div className="form__input-cell">
         <p className="form__input-description">SEP</p>
@@ -107,7 +107,7 @@ const Form = ({resultat}) => {
           disabled={isBlockedInput}
           onChange={changeInputHandler}
         />
-        <div className="form__input-measuring">мм</div>
+        <div className="form__input-measuring">cм</div>
       </div>
       <div className="form__result">
         <p>Результат

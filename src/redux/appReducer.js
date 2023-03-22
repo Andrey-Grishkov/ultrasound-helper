@@ -8,28 +8,62 @@ const initialState = {
 
 export const appReducer = (state = initialState, action) => {
   switch (action.type) {
+
     case SET_RESULT:
     {
+      function roundToNearestMultipleOfFive(num) {
+        const remainder = num % 5;
+        if (remainder < 2.5) {
+          return num - remainder;
+        } else {
+          return num + (5 - remainder);
+        }
+      }
+
+      function roundToNearestMultipleOfTen(num) {
+        const remainder = num % 10;
+        if (remainder < 5) {
+          return num - remainder;
+        } else {
+          return num + (10 - remainder);
+        }
+      }
+
       const BSA = 0.024265*(action.payload.grown**0.3964)*(action.payload.weight**0.5378);
       const DIP = action.payload.l*action.payload.sep*BSA;
       let resultat, resultatMin, resultatMax
       if(DIP==0){
         return {result: `0 мл`};
       } else if (DIP<200){
-        return {result: `${resultat = Math.trunc(DIP*9.01)} мл+ 
-        (${resultatMin = Math.trunc(DIP*(9.01-0.34))} - 
-        ${resultatMax = Math.trunc(DIP*(9.01+0.34))} мл)
+
+        const resultat = roundToNearestMultipleOfFive(Math.trunc(DIP*9.01));
+        const resultatMin = roundToNearestMultipleOfTen(Math.trunc(DIP*(9.01-0.34)));
+        const resultatMax = roundToNearestMultipleOfTen(Math.trunc(DIP*(9.01+0.34)));
+
+        return {result: `${resultat} мл+ 
+        (${resultatMin} - 
+        ${resultatMax} мл)
         `};
       } else if (DIP<500) {
-        return {result: `${resultat = Math.trunc(DIP*8.17)} мл+ 
-        (${resultatMin = Math.trunc(DIP*(8.17-0.17))} - 
-        ${resultatMax = Math.trunc(DIP*(8.17+0.17))} мл)
+
+        const resultat = roundToNearestMultipleOfFive( Math.trunc(DIP*8.17));
+        const resultatMin =  roundToNearestMultipleOfTen(Math.trunc(DIP*(8.17-0.17)));
+        const resultatMax = roundToNearestMultipleOfTen(Math.trunc(DIP*(8.17+0.17)));
+
+        return {result: `${resultat} мл+ 
+        (${resultatMin} - 
+        ${resultatMax} мл)
         `};
       }
       else {
-        return {result: `${resultat = Math.trunc(DIP*7.77)} мл+ 
-        (${resultatMin = Math.trunc(DIP*(7.77-0.46))} - 
-        ${resultatMax = Math.trunc(DIP*(7.77+0.46))} мл)
+
+        const resultat = roundToNearestMultipleOfFive( Math.trunc(DIP*7.77));
+        const resultatMin =  roundToNearestMultipleOfTen(Math.trunc(DIP*(7.77-0.46)));
+        const resultatMax = roundToNearestMultipleOfTen(Math.trunc(DIP*(7.77+0.46)));
+
+        return {result: `${resultat} мл+ 
+        (${resultatMin} - 
+        ${resultatMax} мл)
         `};
       }
     }
