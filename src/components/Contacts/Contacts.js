@@ -16,6 +16,10 @@ const Contacts = () => {
           <TeamList />
           <PersonalContacts />
         </div>
+      <div className="contacts__text-container">
+        <p className="contacts__text">Вопросы и предложения по работе калькуляторов, а также сообщить об ошибке можно</p>
+        <p className="contacts__link">Пикало Илье Андреевичу</p>
+      </div>
     </section>
   );
 };

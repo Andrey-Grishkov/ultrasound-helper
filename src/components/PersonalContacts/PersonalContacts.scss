@@ -1,25 +1,23 @@
 @import "../root";
 
 .personal {
-  border: blue 1px solid;
+
 
   &__content {
     margin: 28px 0 0 0;
     width: 100%;
     @include flex(row, flex-start, center);
     gap: 12px;
-    border: blue 1px solid;
   }
 
   &__image {
     width: 12.50vw;
     object-fit: contain;
-    border: red 1px solid;
     border-radius: 100%;
   }
 
   &__text {
-    border: red 1px solid;
+
   }
 
   &__title {
@@ -58,6 +56,9 @@
     color: #1068c2;
 
     &:hover {
+      transition: 1s ease-in;
+      opacity: .6;
+      border-bottom: #1068c2 1px solid;
       cursor: pointer;
     }
   }

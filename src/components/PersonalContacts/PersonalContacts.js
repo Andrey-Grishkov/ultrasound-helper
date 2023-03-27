@@ -22,10 +22,6 @@ const PersonalContacts = () => {
         +7-(950)-050-81-65</a></p>
       <p className="personal__name-link">Эл. почта: <a className="personal__link" href="mailto:pikalodoc@mail.ru">
         pikalodoc@mail.ru</a></p>
-
-
-
-
     </section>
   );
 };

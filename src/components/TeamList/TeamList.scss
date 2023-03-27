@@ -2,7 +2,6 @@
 
 .team {
   width: 100%;
-  border: red 1px solid;
 
   &__title {
     margin: 28px 0 0 0;
@@ -20,16 +19,26 @@
   }
 
   &__item {
+    color: #1068c2;
+    @include flex(row, flex-start, flex-start);
+  }
+
+  &__link {
+    margin: 0;
     font-family: 'Inter';
     font-style: normal;
     @include font(20px, 125%, 400);
     color: #1068c2;
     &:hover {
+      transition: 1s ease-in;
+      opacity: .6;
+      border-bottom: #1068c2 1px solid;
       cursor: pointer;
     }
   }
 
   &__prof {
+    margin-left: 5px;
     font-family: 'Inter';
     font-style: normal;
     @include font(20px, 125%, 400);

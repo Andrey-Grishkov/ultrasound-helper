@@ -10,9 +10,6 @@ const HeaderNav = () => {
           <Link className="header-nav__link" to="/">На главную</Link>
         </li>
         <li>
-          <Link className="header-nav__link" to="/about-project">О проекте</Link>
-        </li>
-        <li>
           <Link className="header-nav__link" to="/contacts">Контакты</Link>
         </li>
       </ul>

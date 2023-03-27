@@ -1,11 +1,8 @@
 @import "../root";
 
 .contacts {
-  height: 78vh;
-
+  height: 81vh;
   width: 100%;
-  //height: 78vh;
-  //height: 80%;
 
   &__content {
     margin: 44px 5vw 55px 5vw;
@@ -33,5 +30,33 @@
     @include flex(column, center, flex-start);
     border: 1px solid rgba(187, 187, 187, 1);
     color: rgba(14, 15, 15, 1);
+  }
+
+  &__text-container {
+    margin: 15px 5vw 0 5vw;
+    @include flex(row, flex-start, flex-start);
+    gap: 5px;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    @include font(20px, 125%, 400);
+    color: black;
+  }
+
+  &__link {
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    @include font(20px, 125%, 400);
+    color: #1068c2;
+    &:hover {
+      transition: 1s ease-in;
+      opacity: .6;
+      border-bottom: #1068c2 1px solid;
+      cursor: pointer;
+    }
   }
 }
