@@ -1,4 +1,37 @@
+@import "../root";
 
 .contacts {
   height: 78vh;
+
+  width: 100%;
+  //height: 78vh;
+  //height: 80%;
+
+  &__content {
+    margin: 44px 5vw 55px 5vw;
+    display: grid;
+    grid-template-columns: 44.25vw auto;
+    grid-template-rows: 106px auto;
+    column-gap: 1.50vw;
+  }
+
+  &__title-container {
+    margin: 0;
+    background-color: rgba(90, 90, 90, 1);
+    color: white;
+    @include flex(column, center, flex-start);
+  }
+
+  &__title {
+    margin: 0 24px;
+    @include font(28px, 34px, 600);
+  }
+
+  &__about-container {
+    margin: 0;
+    height: 100%;
+    @include flex(column, center, flex-start);
+    border: 1px solid rgba(187, 187, 187, 1);
+    color: rgba(14, 15, 15, 1);
+  }
 }

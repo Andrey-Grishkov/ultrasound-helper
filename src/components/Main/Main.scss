@@ -25,7 +25,7 @@
     width: 29vw;
     height: 136px;
     @include flex(row, flex-start, center);
-    background-color: rgb(223, 227, 236);
+    background-color: #E9F2F9;
     border-radius: 12px;
     cursor: default;
     text-decoration: none;
@@ -36,7 +36,7 @@
       background-color: rgb(205, 217, 253);
 
       &:hover {
-        border: rgba(35, 114, 171, 1) 5px solid;
+        border: #174C72 1px solid;
       }
     }
   }

@@ -1,0 +1,38 @@
+@import "../root";
+
+.team {
+  width: 100%;
+  border: red 1px solid;
+
+  &__title {
+    margin: 28px 0 0 0;
+    font-family: 'Inter';
+    @include font(20px, 135%, 700);
+    font-style: normal;
+    color: #0E0F0F;
+  }
+
+  &__list {
+    margin: 20px 0 0 0;
+    padding-left: 18px;
+    @include flex(column, flex-start, flex-start);
+    gap: 12px;
+  }
+
+  &__item {
+    font-family: 'Inter';
+    font-style: normal;
+    @include font(20px, 125%, 400);
+    color: #1068c2;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__prof {
+    font-family: 'Inter';
+    font-style: normal;
+    @include font(20px, 125%, 400);
+    color: black;
+  }
+}

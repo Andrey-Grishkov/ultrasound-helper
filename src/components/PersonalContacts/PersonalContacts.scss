@@ -1,0 +1,65 @@
+@import "../root";
+
+.personal {
+  border: blue 1px solid;
+
+  &__content {
+    margin: 28px 0 0 0;
+    width: 100%;
+    @include flex(row, flex-start, center);
+    gap: 12px;
+    border: blue 1px solid;
+  }
+
+  &__image {
+    width: 12.50vw;
+    object-fit: contain;
+    border: red 1px solid;
+    border-radius: 100%;
+  }
+
+  &__text {
+    border: red 1px solid;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: 'Inter';
+    @include font(28px, 135%, 700);
+    font-style: normal;
+    color: #1068c2;
+  }
+
+  &__description {
+    margin: 12px 0 0 0;
+    font-family: 'Inter';
+    @include font(18px, 125%, 400);
+    font-style: normal;
+    color: black;
+  }
+
+  &__name-link {
+    margin: 12px 0 0 0;
+    font-family: 'Inter';
+    @include font(22px, 125%, 400);
+    font-style: normal;
+    color: black;
+
+    &:first-of-type {
+      margin-top: 20px;
+    }
+  }
+
+  &__link {
+    font-family: 'Inter';
+    @include font(22px, 125%, 400);
+    font-style: normal;
+    text-decoration: none;
+    color: #1068c2;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+}

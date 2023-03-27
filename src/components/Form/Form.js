@@ -91,6 +91,7 @@ const Form = ({resultat}) => {
           className="form__input"
           id="l"
           name="l"
+          type="number"
           value={state.l}
           disabled={isBlockedInput}
           onChange={changeInputHandler}
@@ -103,6 +104,7 @@ const Form = ({resultat}) => {
           className="form__input"
           id="sep"
           name="sep"
+          type="number"
           value={state.sep}
           disabled={isBlockedInput}
           onChange={changeInputHandler}

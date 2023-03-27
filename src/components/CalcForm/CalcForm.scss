@@ -6,6 +6,7 @@
   &__photo-container {
     @include flex(row, space-between, center);
     border: 1px solid rgba(187, 187, 187, 1);
+    width: 51.88vw;
   }
 
   &__image {
@@ -34,5 +35,12 @@
   &__description {
     margin: 20px 0 0 0;
     @include font(16px, 19px, 400);
+  }
+
+  &__link {
+    color: #000000;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
