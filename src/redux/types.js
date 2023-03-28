@@ -1,1 +1,3 @@
 export const SET_RESULT = 'RESULT/SET_RESULT'
+
+export const SET_INFO = 'CONTACTS/SET_INFO'

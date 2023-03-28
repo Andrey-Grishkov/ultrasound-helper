@@ -9,7 +9,6 @@ const Form = ({resultat}) => {
   const [isBlockedInput, setIsBlockedInput] = useState(false);
   const [isBlockedClear, setIsBlockedClear] = useState(true);
   const [isBlockedSubmit, setIsBlockedSubmit] = useState(true);
-  console.log(resultat.result, 'init res')
 
   const dispatch = useDispatch();
 

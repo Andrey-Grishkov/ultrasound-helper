@@ -2,7 +2,6 @@
 
 .personal {
 
-
   &__content {
     margin: 28px 0 0 0;
     width: 100%;
@@ -12,11 +11,13 @@
 
   &__image {
     width: 12.50vw;
-    object-fit: contain;
+    height: 12.50vw;
+    object-fit: cover;
     border-radius: 100%;
   }
 
   &__text {
+    width: 32vw;
 
   }
 
