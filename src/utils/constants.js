@@ -7,6 +7,7 @@ import Grishkov from "../images/Grishkov.jpg";
 import Morozova from "../images/Morozova.jpg";
 import UnknownWomen from "../images/UnknownWomen.png";
 import SanNikita from "../images/SanNikita.jpg";
+import Shmatko from "../images/Shmatko.jpg";
 
 export const doctorList = [
   {
@@ -189,10 +190,25 @@ export const projectList = [
     name: 'Шматкова Анна',
     prof: ' - QA-тестировщик',
     id: 2,
-    photo: UnknownWomen,
-    info:'QA-тестировщик с опытом работы на крупных проектах.',
+    photo: Shmatko,
+    info:'Работает в Сколково в компании КПМ «Римт» в качестве тестировщика. Занимаеться сбором и автоматизированным тестированием физических моделей. ' +
+      'Обладает большим набором навыков: анализ геофизических данных, функциональное и регрессионное тестирование, ' +
+      'написание технической и тестовой документации, тестирование веб-приложений, мобильное тестирование и API. ' +
+      'По образвоанию ' +
+      'геофизик, работала в компании Marine Geo ' + 'Servis.' + ' В прошлом преподаватель физики, математики и различных ' +
+      'технических дисциплин. ' +
+      'Увлечения: рисование, танцы, кулинария, организация детских мероприятий, флористика, медицина',
     contacts: [
-
+      {
+        nameCont:'Эл. почта:',
+        pref:'mailto:',
+        value:'annshmatkova@gmal.com'
+      },
+      {
+        nameCont:'Telegram:',
+        pref:'',
+        value:'https://t.me/annshmatkova'
+      },
     ]
   }
 ]
