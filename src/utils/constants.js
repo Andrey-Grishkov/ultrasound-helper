@@ -122,11 +122,16 @@ export const projectList = [
   },
   {
     name: 'Пономарева Екатерина',
-    prof: ' - Веб-дизайнер',
+    prof: ' - UX/UI дизайнер',
     id: 2,
     photo: UnknownWomen,
-    info:'Веб-дизайнер',
+    info:'UX/UI дизайнер',
     contacts: [
+      {
+        nameCont:'Эл. почта:',
+        pref:'mailto:',
+        value:'Katterina.ponomareva@gmail.com'
+      }
     ]
   },
   {
