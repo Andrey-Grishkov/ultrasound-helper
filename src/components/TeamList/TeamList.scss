@@ -6,13 +6,13 @@
   &__title {
     margin: 3vh 0 0 0;
     font-family: 'Inter';
-    @include font(20px, 135%, 700);
+    @include font(18px, 105%, 700);
     font-style: normal;
     color: #0E0F0F;
   }
 
   &__list {
-    margin: 20px 0 0 0;
+    margin: 2vh 0 0 0;
     padding-left: 18px;
     @include flex(column, flex-start, flex-start);
     gap: 12px;

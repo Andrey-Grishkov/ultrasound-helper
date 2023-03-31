@@ -110,7 +110,7 @@ export const projectList = [
     prof: ' - Project-manager',
     id: 1,
     photo: Morozova,
-    info:'Тут какой-то текст',
+    info:'Выступает в роли Project-manager в данном проекте. Врач-лечебник, врач ультразвуковой диагностики, аналитик данных',
     contacts: [
       {
         nameCont:'Номер моб.телефона:',
@@ -124,7 +124,7 @@ export const projectList = [
     prof: ' - Веб-дизайнер',
     id: 2,
     photo: UnknownWomen,
-    info:'Тут какой-то текст',
+    info:'Веб-дизайнер',
     contacts: [
     ]
   },
@@ -165,12 +165,19 @@ export const projectList = [
     ]
   },
   {
-    name: 'Сан Никита',
+    name: 'Серков Никита',
     prof: ' - QA-тестировщик',
     id: 2,
     photo: SanNikita,
-    info:'Тут какой-то текст',
+    info:'QA-тестировщик. Закончил Яндекс Практикум. Нашёл баги на Rambler, Работа.ru, it2g.ru и даже в мобильном ' +
+      'приложении hh.ru. Тестирует web, mobile, desktop приложения, API. Играет в кино, театре, написал три книги. ' +
+      'С детства любит сферу медицины, поэтому с радостью работает над проектом.',
     contacts: [
+      {
+        nameCont:'Эл. почта:',
+        pref:'mailto:',
+        value:'nikitadel@yandex.ru'
+      },
       {
         nameCont:'Telegram:',
         pref:'',
@@ -183,7 +190,7 @@ export const projectList = [
     prof: ' - QA-тестировщик',
     id: 2,
     photo: UnknownWomen,
-    info:'Тут какой-то текст',
+    info:'QA-тестировщик с опытом работы на крупных проектах.',
     contacts: [
 
     ]

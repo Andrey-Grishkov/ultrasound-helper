@@ -32,7 +32,7 @@
   &__description {
     margin: 12px 0 0 0;
     font-family: 'Inter';
-    @include font(18px, 125%, 400);
+    @include font(16px, 105%, 400);
     font-style: normal;
     color: black;
   }
@@ -40,7 +40,7 @@
   &__name-link {
     margin: 12px 0 0 0;
     font-family: 'Inter';
-    @include font(22px, 125%, 400);
+    @include font(20px, 125%, 400);
     font-style: normal;
     color: black;
 
@@ -51,7 +51,7 @@
 
   &__link {
     font-family: 'Inter';
-    @include font(22px, 125%, 400);
+    @include font(20px, 125%, 400);
     font-style: normal;
     text-decoration: none;
     color: #1068c2;
