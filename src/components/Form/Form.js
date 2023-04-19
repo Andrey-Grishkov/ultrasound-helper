@@ -1,10 +1,15 @@
 import React, {useEffect, useState} from "react";
 import {connect} from 'react-redux'
 import {useDispatch} from "react-redux";
-import {calcRes} from '../../redux/actions'
+import {calcRes, hideError} from '../../redux/actions'
 import "./Form.scss";
+import Errors from "../Errors/Errors";
+import {showError} from '../../redux/actions';
+import {logDOM} from "@testing-library/react";
 
-const Form = ({resultat}) => {
+const Form = ({resultat, errors}) => {
+
+  console.log(errors, "errors")
 
   const [isBlockedInput, setIsBlockedInput] = useState(false);
   const [isBlockedClear, setIsBlockedClear] = useState(true);
@@ -17,16 +22,28 @@ const Form = ({resultat}) => {
     weight: "",
     l: "",
     sep: ""
-      }
-      )
+      })
+
+  const [errorState, setErrorState] = useState({
+    grown: null,
+    weight: null,
+    l: null,
+    sep: null
+  });
 
   useEffect(()=>{
-      if(state.grown&&state.weight&& state.l && state.sep){
+      console.log(!Object.values(errorState).includes("Error"), "Object.values(errorState).includes(\"Error\")");
+
+      if(state.grown && state.weight && state.l && state.sep && !Object.values(errorState).includes("Error")){
+        console.log(errorState, 'errorState')
         setIsBlockedSubmit(false);
+      } else {
+        console.log(errorState, 'errorState')
+        setIsBlockedSubmit(true);
       }
-      console.log(state, "state")
+
     },
-    [state])
+    [state, errorState])
 
   const submitHandler = event => {
     event.preventDefault();
@@ -37,9 +54,79 @@ const Form = ({resultat}) => {
 
   const changeInputHandler = event => {
     event.persist();
-    setState(prev => ({...prev, ...{[event.target.name]: event.target.value}}))
-
+    setState(prev => ({...prev, ...{[event.target.name]: event.target.value}}));
     setIsBlockedClear(false);
+
+    let targetValueNumber = Number(event.target.value);
+
+    let nameInpt
+    switch (event.target.name) {
+      case 'sep': {
+        nameInpt = 'SEP';
+        if(targetValueNumber === 0 || targetValueNumber>100){
+          setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
+          return dispatch(showError(nameInpt, "Введите число больше 0 и не более 100"));
+        }else{
+          setErrorState(prev => ({...prev, ...{[event.target.name]: null}}));
+          return dispatch(hideError());
+        }
+      }
+      case 'grown': {
+        nameInpt = 'Рост';
+        if(targetValueNumber === 0 || targetValueNumber>300){
+          setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
+          return dispatch(showError(nameInpt, "Введите число больше 0 и не более 300"));
+        }else{
+          setErrorState(prev => ({...prev, ...{[event.target.name]: null}}));
+          return dispatch(hideError());
+        }
+      }
+      case 'weight': {
+        nameInpt = 'Вес';
+        if(targetValueNumber === 0 || targetValueNumber>500){
+          setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
+          return dispatch(showError(nameInpt, "Введите число больше 0 и не более 500"));
+        }else{
+          setErrorState(prev => ({...prev, ...{[event.target.name]: null}}));
+          return dispatch(hideError());
+        }
+      }
+      case 'l':
+      {
+        nameInpt = 'L';
+        if(targetValueNumber === 0 || targetValueNumber>100){
+          setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
+          return dispatch(showError(nameInpt, "Введите число больше 0 и не более 100"));
+        }else{
+          setErrorState(prev => ({...prev, ...{[event.target.name]: null}}));
+          return dispatch(hideError());
+        }
+      }
+    }
+
+
+
+
+    // if(targetValueNumber === 0 || targetValueNumber>100){
+    //   setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
+    //   return dispatch(showError(nameInpt, "Введите не ноль"));
+    // }else{
+    //   setErrorState(prev => ({...prev, ...{[event.target.name]: null}}));
+    //   return dispatch(hideError());
+    // }
+
+
+    // switch (true) {
+    //   case /0/.test(event.target.value): {
+    //     setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
+    //     return dispatch(showError(nameInpt, "Введите не ноль"));
+    //   }
+    //
+    //   default:{
+    //     setErrorState(prev => ({...prev, ...{[event.target.name]: null}}));
+    //     return dispatch(hideError());
+    //   }
+    // }
   }
 
   const stateClear = event =>{
@@ -55,6 +142,8 @@ const Form = ({resultat}) => {
     setIsBlockedSubmit(true);
     setIsBlockedClear(true);
   }
+
+  console.log(errors, 'errors')
 
     return (
     <form className="form" onSubmit={submitHandler}>
@@ -110,6 +199,7 @@ const Form = ({resultat}) => {
         />
         <div className="form__input-measuring">cм</div>
       </div>
+      <Errors errorText={errors.error}/>
       <div className="form__result">
         <p>Результат
         </p>
@@ -133,12 +223,13 @@ const Form = ({resultat}) => {
 }
 
 const mapDispatchToProps = {
-  calcRes
+  calcRes, showError
 }
 
 const mapStateToProps = state => {
   return {
-    resultat: state.app
+    resultat: state.app,
+    errors: state.error
   }
 }
 

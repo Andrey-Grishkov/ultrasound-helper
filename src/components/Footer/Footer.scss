@@ -8,16 +8,8 @@
   color: white;
   @include flex(row, flex-end, center);
 
-  &__link {
+  &__copyring {
     margin-right: 80px;
-    cursor: pointer;
     color: white;
-    text-decoration: none;
-
-    &:hover {
-      transition: 1s ease-in;
-      opacity: .6;
-      border-bottom: white 1px solid;
-    }
   }
 }

@@ -1,10 +1,10 @@
 @import "../root";
 
 .form {
-  margin: 28px 24px;
+  margin: 18px 24px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 80px);
+  grid-template-rows: repeat(2, 80px) 20px repeat(2, 80px);
   gap: 1.50vw;
 
   &__input-cell {
@@ -21,7 +21,7 @@
   &__input {
     width: 10.81vw;
     height: 48px;
-    padding: 0;
+    padding: 0 0 0 10px;
     border: #BBBBBB 1px solid;
   }
 

@@ -15,13 +15,14 @@
     object-fit: contain;
 }
   &__text {
+    margin-left: 10px;
     @include font(20px, 24px, 400);
   }
 
   &__form-container {
     display: grid;
     grid-template-columns: 31.31vw auto;
-    height: 445px;
+    //height: 445px;
     width: 51.88vw;
     border: 1px solid rgba(187, 187, 187, 1);
     border-top: none;
@@ -38,6 +39,7 @@
   }
 
   &__link {
+    margin: 0 0 0 5px;
     color: #000000;
     &:hover {
       cursor: pointer;
