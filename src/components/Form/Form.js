@@ -5,11 +5,8 @@ import {calcRes, hideError} from '../../redux/actions'
 import "./Form.scss";
 import Errors from "../Errors/Errors";
 import {showError} from '../../redux/actions';
-import {logDOM} from "@testing-library/react";
 
 const Form = ({resultat, errors}) => {
-
-  console.log(errors, "errors")
 
   const [isBlockedInput, setIsBlockedInput] = useState(false);
   const [isBlockedClear, setIsBlockedClear] = useState(true);
@@ -32,7 +29,6 @@ const Form = ({resultat, errors}) => {
   });
 
   useEffect(()=>{
-      console.log(!Object.values(errorState).includes("Error"), "Object.values(errorState).includes(\"Error\")");
 
       if(state.grown && state.weight && state.l && state.sep && !Object.values(errorState).includes("Error")){
         console.log(errorState, 'errorState')
@@ -58,12 +54,15 @@ const Form = ({resultat, errors}) => {
     setIsBlockedClear(false);
 
     let targetValueNumber = Number(event.target.value);
+    let regex = /^[0-9.,]*$/;
 
     let nameInpt
     switch (event.target.name) {
       case 'sep': {
+        console.log(event.target.value, "event.target.value")
         nameInpt = 'SEP';
-        if(targetValueNumber === 0 || targetValueNumber>100){
+        if(targetValueNumber === 0 || targetValueNumber>100 || !regex.test(event.target.value)
+          || /^\./.test(event.target.value) || /^,/.test(event.target.value)){
           setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
           return dispatch(showError(nameInpt, "Введите число больше 0 и не более 100"));
         }else{
@@ -73,7 +72,8 @@ const Form = ({resultat, errors}) => {
       }
       case 'grown': {
         nameInpt = 'Рост';
-        if(targetValueNumber === 0 || targetValueNumber>300){
+        if(targetValueNumber === 0 || targetValueNumber>300  || !regex.test(event.target.value)
+          || /^\./.test(event.target.value) || /^,/.test(event.target.value)){
           setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
           return dispatch(showError(nameInpt, "Введите число больше 0 и не более 300"));
         }else{
@@ -83,7 +83,8 @@ const Form = ({resultat, errors}) => {
       }
       case 'weight': {
         nameInpt = 'Вес';
-        if(targetValueNumber === 0 || targetValueNumber>500){
+        if(targetValueNumber === 0 || targetValueNumber>500  || !regex.test(event.target.value)
+          || /^\./.test(event.target.value) || /^,/.test(event.target.value)){
           setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
           return dispatch(showError(nameInpt, "Введите число больше 0 и не более 500"));
         }else{
@@ -94,7 +95,8 @@ const Form = ({resultat, errors}) => {
       case 'l':
       {
         nameInpt = 'L';
-        if(targetValueNumber === 0 || targetValueNumber>100){
+        if(targetValueNumber === 0 || targetValueNumber>100 || !regex.test(event.target.value)
+          || /^\./.test(event.target.value) || /^,/.test(event.target.value)){
           setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
           return dispatch(showError(nameInpt, "Введите число больше 0 и не более 100"));
         }else{
@@ -103,30 +105,6 @@ const Form = ({resultat, errors}) => {
         }
       }
     }
-
-
-
-
-    // if(targetValueNumber === 0 || targetValueNumber>100){
-    //   setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
-    //   return dispatch(showError(nameInpt, "Введите не ноль"));
-    // }else{
-    //   setErrorState(prev => ({...prev, ...{[event.target.name]: null}}));
-    //   return dispatch(hideError());
-    // }
-
-
-    // switch (true) {
-    //   case /0/.test(event.target.value): {
-    //     setErrorState(prev => ({...prev, ...{[event.target.name]: 'Error'}}));
-    //     return dispatch(showError(nameInpt, "Введите не ноль"));
-    //   }
-    //
-    //   default:{
-    //     setErrorState(prev => ({...prev, ...{[event.target.name]: null}}));
-    //     return dispatch(hideError());
-    //   }
-    // }
   }
 
   const stateClear = event =>{
@@ -151,7 +129,7 @@ const Form = ({resultat, errors}) => {
         <p className="form__input-description">Рост</p>
         <input
           className="form__input"
-          type="number"
+          type="text"
           id="grown"
           name="grown"
           value={state.grown}
@@ -164,7 +142,7 @@ const Form = ({resultat, errors}) => {
         <p className="form__input-description">Вес</p>
         <input
           className="form__input"
-          type="number"
+          type="text"
           id="weight"
           name="weight"
           value={state.weight}
@@ -179,7 +157,7 @@ const Form = ({resultat, errors}) => {
           className="form__input"
           id="l"
           name="l"
-          type="number"
+          type="text"
           value={state.l}
           disabled={isBlockedInput}
           onChange={changeInputHandler}
@@ -192,7 +170,7 @@ const Form = ({resultat, errors}) => {
           className="form__input"
           id="sep"
           name="sep"
-          type="number"
+          type="text"
           value={state.sep}
           disabled={isBlockedInput}
           onChange={changeInputHandler}

@@ -6,8 +6,6 @@ const initialState = {
 
 export const errReducer = (state = initialState, action) => {
 
-  console.log(action, "action")
-
   switch (action.type) {
     case SHOW_ERROR:
       return {...state, error: action.payload};
