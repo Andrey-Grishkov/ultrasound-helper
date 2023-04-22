@@ -13,7 +13,13 @@ const Header = () => {
           <p className="header__text">Делаем работу более эффективной и точной</p>
         </div>
       </div>
-      <HeaderNav/>
+      <div className="header__nav-container">
+        <HeaderNav/>
+      </div>
+      <button
+        className="header__burger-menu"
+        type="button"
+      ></button>
     </header>
   );
 };

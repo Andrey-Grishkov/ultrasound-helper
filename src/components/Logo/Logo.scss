@@ -1,9 +1,14 @@
-
 .logo {
-  margin-left: 80px;
-  width: 5vw;
+  margin-left: 10%;
+  width: 10%;
+
+  @media screen and (max-width: 320px) {
+    margin-left: 5%;
+    width: 20%;
+  }
 
   &__image {
     width: 100%;
+    object-fit: contain;
   }
 }
