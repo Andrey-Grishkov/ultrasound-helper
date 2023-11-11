@@ -8,7 +8,7 @@ const TeamList = () => {
   return (
     <section className="team">
       <h3 className="team__title">Разработка методик калькуляторов ведется сотрудниками ФГБОУ ВО «Иркутский государственный
-        медицинский университет» г.Новосибирск</h3>
+        медицинский университет» г.Иркутск</h3>
       <ul className="team__list">
         {doctorList.map((people) =>
           (<Team
