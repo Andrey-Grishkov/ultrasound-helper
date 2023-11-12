@@ -1,5 +1,4 @@
-##Ultrasound-helper
-___
+## Ultrasound-helper
 
 ### 🩺 Ссылка на проект:
 
